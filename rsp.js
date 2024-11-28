@@ -20,6 +20,14 @@ function getHumanChoice(){
         return "paper"
     } else{
         console.log("Invalid choice")
+        return null;
     }
 }
 
+function play(){
+    humanChoice = getHumanChoice()
+    computerChoice = getCumputerChoice()
+    console.log(`Human chioce: ${humanChoice}`)
+    console.log(`Computer chioce: ${computerChoice}`)
+
+}
