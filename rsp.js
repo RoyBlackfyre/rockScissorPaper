@@ -3,18 +3,27 @@ humanScore = 0
 computerScore = 0
 
 function showScore(){
-    console.table([{"humano":humanScore,"computadora":computerScore}]
-    )
+    console.table({"humano":humanScore,"computadora":computerScore})
 }
-function getCumputerChoice(){
-    choice = Math.floor(Math.random()*3 + 1)
-    if(choice===1){
-        return "rock"
-    } else if(choice===2) {
-        return "scissor"
+
+function play(){
+    humanChoice = getHumanChoice()
+    computerChoice = getCumputerChoice()
+    console.log(`Human chioce: ${humanChoice}`)
+    console.log(`Computer chioce: ${computerChoice}`)
+    if(humanChoice!=null){
+        result = battle(humanChoice,computerChoice)
+        if(result=="win"){
+            humanScore++
+        } else if(result=="lose") {
+            computerScore++
+        }
+        console.log(result)
+
     } else {
-        return "paper"
+        console.log("Try Again")
     }
+    
 }
 
 function getHumanChoice(){
@@ -31,18 +40,15 @@ function getHumanChoice(){
     }
 }
 
-function play(){
-    humanChoice = getHumanChoice()
-    computerChoice = getCumputerChoice()
-    console.log(`Human chioce: ${humanChoice}`)
-    console.log(`Computer chioce: ${computerChoice}`)
-    if(humanChoice!=null){
-        result = battle(humanChoice,computerChoice)
-        console.log(result)
-    } else {1
-        console.log("Try Again")
+function getCumputerChoice(){
+    choice = Math.floor(Math.random()*3 + 1)
+    if(choice===1){
+        return "rock"
+    } else if(choice===2) {
+        return "scissor"
+    } else {
+        return "paper"
     }
-    
 }
 
 function battle(human,computer){
