@@ -29,5 +29,23 @@ function play(){
     computerChoice = getCumputerChoice()
     console.log(`Human chioce: ${humanChoice}`)
     console.log(`Computer chioce: ${computerChoice}`)
+    if(humanChoice!=null){
+        result = battle(humanChoice,computerChoice)
+        console.log(result)
+    } else {
+        console.log("Try Again")
+    }
+    
+}
 
+function battle(human,computer){
+    if(human==computer){
+        return "tie"
+    } else if(human=="rock"){
+        return computer=="scissor" ?  "win" :  "lose"
+    } else if(human=="scissor"){
+        return computer=="paper" ? "win" : "lose"
+    } else if(human=="paper"){
+        return computer=="rock" ? "win" : "lose"
+    }
 }
