@@ -1,4 +1,11 @@
 
+humanScore = 0
+computerScore = 0
+
+function showScore(){
+    console.table([{"humano":humanScore,"computadora":computerScore}]
+    )
+}
 function getCumputerChoice(){
     choice = Math.floor(Math.random()*3 + 1)
     if(choice===1){
@@ -32,7 +39,7 @@ function play(){
     if(humanChoice!=null){
         result = battle(humanChoice,computerChoice)
         console.log(result)
-    } else {
+    } else {1
         console.log("Try Again")
     }
     
