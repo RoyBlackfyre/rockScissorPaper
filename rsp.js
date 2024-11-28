@@ -5,8 +5,13 @@ computerScore = 0
 function showScore(){
     console.table({"humano":humanScore,"computadora":computerScore})
 }
-
-function play(){
+function playGame(){
+    for(let round = 1; round<=5; round++){
+        playRound()
+    }
+    showScore()
+}
+function playRound(){
     humanChoice = getHumanChoice()
     computerChoice = getCumputerChoice()
     console.log(`Human chioce: ${humanChoice}`)
@@ -28,11 +33,11 @@ function play(){
 
 function getHumanChoice(){
     choice = prompt("Input r(rock), s(scissor), p(paper) ")
-    if(choice==="r"){
+    if(choice==="r"||choice==="R"){
         return "rock"
-    } else if(choice==="s") {
+    } else if(choice==="s"||choice==="S") {
         return "scissor"
-    } else if(choice==="p"){
+    } else if(choice==="p"||choice==="P"){
         return "paper"
     } else{
         console.log("Invalid choice")
