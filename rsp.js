@@ -2,6 +2,7 @@
 humanScore = 0
 computerScore = 0
 
+
 function showScore(){
     console.table({"humano":humanScore,"computadora":computerScore})
 }
