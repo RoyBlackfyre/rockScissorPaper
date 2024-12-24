@@ -2,14 +2,21 @@
 humanScore = 0
 computerScore = 0
 
+const roca = document.querySelector("#rock")
+const papel = document.querySelector("#paper")
+const tijera = document.querySelector("#sccisor")
+
+document.addEventListener("click",(e)=>{
+    if(e.target.id =="scissor" || e.target.id =="paper" || e.target.id =="rock"){
+        playRound(e.target.id)
+    }
+})
 
 function showScore(){
     console.table({"humano":humanScore,"computadora":computerScore})
 }
 
-
-function playRound(){
-    humanChoice = getHumanChoice()
+function playRound(humanChoice){
     computerChoice = getCumputerChoice()
     console.log(`Human chioce: ${humanChoice}`)
     console.log(`Computer chioce: ${computerChoice}`)
@@ -26,20 +33,6 @@ function playRound(){
         console.log("Try Again")
     }
     
-}
-
-function getHumanChoice(){
-    choice = prompt("Input r(rock), s(scissor), p(paper) ")
-    if(choice==="r"||choice==="R"){
-        return "rock"
-    } else if(choice==="s"||choice==="S") {
-        return "scissor"
-    } else if(choice==="p"||choice==="P"){
-        return "paper"
-    } else{
-        console.log("Invalid choice")
-        return null;
-    }
 }
 
 function getCumputerChoice(){

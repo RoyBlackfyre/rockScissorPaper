@@ -11,7 +11,7 @@ body {
     padding:80px;
     background-color: gray;
     margin : 0px;
-    height: 200px;
+    height: 20%;
     color:white;
     box-sizing: border-box;
 }
@@ -21,7 +21,7 @@ body {
     padding:80px;
     background-color: white;
     margin : 0px;
-    height: 200px;
+    height: 20%;
     color:black;
     box-sizing: border-box;
 }
@@ -31,7 +31,20 @@ body {
     padding:80px;
     background-color: white;
     margin : 0px;
-    height: 200px;
+    height: 20%;
     color:black;
     box-sizing: border-box;
+}
+
+.button-choice {
+    font-size: 40px;
+    border-radius: 100%;
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    border:4px solid rgb(10, 10, 10);
+}
+
+.button-choice:hover {
+    background-color: lightgreen;
 }
