@@ -6,12 +6,8 @@ computerScore = 0
 function showScore(){
     console.table({"humano":humanScore,"computadora":computerScore})
 }
-function playGame(){
-    for(let round = 1; round<=5; round++){
-        playRound()
-    }
-    showScore()
-}
+
+
 function playRound(){
     humanChoice = getHumanChoice()
     computerChoice = getCumputerChoice()
@@ -67,4 +63,9 @@ function battle(human,computer){
     } else if(human=="paper"){
         return computer=="rock" ? "win" : "lose"
     }
+}
+
+function resetScore(){
+    humanScore=0
+    computerScore=0
 }
