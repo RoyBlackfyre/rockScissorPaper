@@ -24,6 +24,8 @@ body {
     height: 20%;
     color:black;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .button-containers {
@@ -47,4 +49,21 @@ body {
 
 .button-choice:hover {
     background-color: lightgreen;
+}
+
+#contador {
+    font-size: 12vh;
+}
+
+#elecciones{
+    display:flex;
+    justify-content: center;
+    font-size: 2vh;
+    gap:96px;
+    margin: 12px 12px;
+    height: 48px;
+}
+
+#resuladp {
+    margin-top: 12px;
 }

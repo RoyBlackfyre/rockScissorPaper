@@ -5,6 +5,11 @@ computerScore = 0
 const roca = document.querySelector("#rock")
 const papel = document.querySelector("#paper")
 const tijera = document.querySelector("#sccisor")
+const contador = document.querySelector("#contador")
+const elecciones = document.querySelector("#elecciones")
+const resultado = document.querySelector("#resultado")
+
+
 
 document.addEventListener("click",(e)=>{
     if(e.target.id =="scissor" || e.target.id =="paper" || e.target.id =="rock"){
@@ -20,20 +25,29 @@ function playRound(humanChoice){
     computerChoice = getCumputerChoice()
     console.log(`Human chioce: ${humanChoice}`)
     console.log(`Computer chioce: ${computerChoice}`)
-    if(humanChoice!=null){
+
         result = battle(humanChoice,computerChoice)
         if(result=="win"){
             humanScore++
         } else if(result=="lose") {
             computerScore++
         }
-        console.log(result)
 
-    } else {
-        console.log("Try Again")
+        elecciones.innerText = `You ${emojify(humanChoice)} Vs ${emojify(computerChoice)} AI`
+        contador.innerText = `${humanScore} : ${computerScore}`
+        resultado.innerText = result
     }
-    
+
+function emojify (opcion) {
+    if(opcion=="rock"){
+        return "🪨"
+    } else if (opcion =="paper"){
+        return "📜"
+    } else {
+        return "✂️"
+    }
 }
+    
 
 function getCumputerChoice(){
     choice = Math.floor(Math.random()*3 + 1)
