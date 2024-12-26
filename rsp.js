@@ -8,23 +8,25 @@ const tijera = document.querySelector("#sccisor")
 const contador = document.querySelector("#contador")
 const elecciones = document.querySelector("#elecciones")
 const resultado = document.querySelector("#resultado")
+const resultadoFinal = document.querySelector("#resultadoFinal")
+const contenedorBotonReset = document.querySelector("#button-reset-container")
+const contenedorBotonesChoice = document.querySelector("#button-choice-container")
+
 
 
 
 document.addEventListener("click",(e)=>{
     if(e.target.id =="scissor" || e.target.id =="paper" || e.target.id =="rock"){
         playRound(e.target.id)
+    } else if(e.target.id == "reset") {
+        resetScore()
     }
 })
 
-function showScore(){
-    console.table({"humano":humanScore,"computadora":computerScore})
-}
-
 function playRound(humanChoice){
+    if(humanScore!=5 && computerScore!=5){
+     
     computerChoice = getCumputerChoice()
-    console.log(`Human chioce: ${humanChoice}`)
-    console.log(`Computer chioce: ${computerChoice}`)
 
         result = battle(humanChoice,computerChoice)
         if(result=="win"){
@@ -37,6 +39,17 @@ function playRound(humanChoice){
         contador.innerText = `${humanScore} : ${computerScore}`
         resultado.innerText = result
     }
+    if(humanScore==5||computerScore==5){
+        mostrarResultado()
+    }
+}
+
+function mostrarResultado() {
+    const resultado = (humanScore == 5? "Ganaste":"Perdiste")
+    resultadoFinal.innerText = resultado
+    contenedorBotonReset.style.display = "block"
+    contenedorBotonesChoice.style.display = "none"
+}
 
 function emojify (opcion) {
     if(opcion=="rock"){
@@ -75,4 +88,10 @@ function battle(human,computer){
 function resetScore(){
     humanScore=0
     computerScore=0
+    contador.innerText = `${humanScore} : ${computerScore}`
+    resultado.innerText = ""
+    resultadoFinal.innerText = ""
+    elecciones.innerText = "You Vs AI"
+    contenedorBotonReset.style.display = "none"
+    contenedorBotonesChoice.style.display = "block"
 }
