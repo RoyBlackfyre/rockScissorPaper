@@ -12,9 +12,6 @@ const resultadoFinal = document.querySelector("#resultadoFinal")
 const contenedorBotonReset = document.querySelector("#button-reset-container")
 const contenedorBotonesChoice = document.querySelector("#button-choice-container")
 
-
-
-
 document.addEventListener("click",(e)=>{
     if(e.target.id =="scissor" || e.target.id =="paper" || e.target.id =="rock"){
         playRound(e.target.id)
